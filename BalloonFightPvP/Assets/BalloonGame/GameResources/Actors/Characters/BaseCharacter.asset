@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 782945db79ce44748b3f294e0edf364e, type: 3}
+  m_Name: BaseCharacter
+  m_EditorClassIdentifier: 
+  _uniqueId: 14
+  nodes:
+  - {fileID: 114516249383086850}
+  - {fileID: 114189859894731892}
+--- !u!114 &114189859894731892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa488b309b2a1c04496bb2fb3c23e611, type: 3}
+  m_Name: Character Motion Node
+  m_EditorClassIdentifier: 
+  _id: 12
+  _graph: {fileID: 11400000}
+  position: {x: -40, y: -280}
+  ports:
+    keys:
+    - Input
+    - Output
+    values:
+    - _id: 14
+      _fieldName: Input
+      _node: {fileID: 114189859894731892}
+      _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Output
+        node: {fileID: 114516249383086850}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+    - _id: 13
+      _fieldName: Output
+      _node: {fileID: 114189859894731892}
+      _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 1
+  _outputs: []
+  Output:
+    PortId: 0
+    Name: Output
+  _routineType: 0
+  _validator: {fileID: 0}
+  Input:
+    PortId: 0
+    Name: 
+--- !u!114 &114516249383086850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d0c7065aa6e1e46be96a27eb24c3cc, type: 3}
+  m_Name: Uni Root Node
+  m_EditorClassIdentifier: 
+  _id: 10
+  _graph: {fileID: 11400000}
+  position: {x: -344, y: -120}
+  ports:
+    keys:
+    - Output
+    values:
+    - _id: 11
+      _fieldName: Output
+      _node: {fileID: 114516249383086850}
+      _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Input
+        node: {fileID: 114189859894731892}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 1
+  _outputs: []
+  Output:
+    PortId: 0
+    Name: Output
