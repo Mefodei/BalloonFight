@@ -16,7 +16,7 @@ namespace BalloonGame.Scripts.Info
         {
             var model = ClassPool.Spawn<CharacterModel>();
             
-            model.Id.Value = ++_id;
+            model.Id = ++_id;
             model.Info = this;
             model.View = ObjectPool.Spawn(CharacterView, Vector3.zero, Quaternion.identity);
             
