@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8849ae657652dd24bbe9868d80e230fa, type: 3}
+  m_Name: BaseCharacter
+  m_EditorClassIdentifier: 
+  _name: BaseCharacter
+  _statesGraph: {fileID: 11400000, guid: 68b7086f9f40bb348b50c3c363804a84, type: 2}
+  _stateObject: {fileID: 0}
+  CharacterView: {fileID: 2198383775518196702, guid: 51a8bcdcb67676e4f975b56c25aee1d9,
+    type: 3}

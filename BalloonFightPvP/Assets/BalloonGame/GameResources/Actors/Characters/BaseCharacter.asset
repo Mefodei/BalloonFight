@@ -58,10 +58,10 @@ MonoBehaviour:
       _connectionType: 0
       _dynamic: 1
   _outputs: []
+  _routineType: 0
   Output:
     PortId: 0
     Name: Output
-  _routineType: 0
   _validator: {fileID: 0}
   Input:
     PortId: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
       _connectionType: 0
       _dynamic: 1
   _outputs: []
+  _routineType: 0
   Output:
     PortId: 0
     Name: Output
