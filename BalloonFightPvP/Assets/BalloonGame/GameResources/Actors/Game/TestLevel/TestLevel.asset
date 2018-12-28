@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 782945db79ce44748b3f294e0edf364e, type: 3}
   m_Name: TestLevel
   m_EditorClassIdentifier: 
-  _uniqueId: 5
+  _uniqueId: 10
   nodes:
   - {fileID: 114791241621273200}
   - {fileID: 114733556959690300}
+  - {fileID: 114885719619435906}
 --- !u!114 &114733556959690300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30,7 +31,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 3
   _graph: {fileID: 11400000}
-  position: {x: -40, y: -120}
+  position: {x: -40, y: -168}
   ports:
     keys:
     - Input
@@ -98,6 +99,9 @@ MonoBehaviour:
       - fieldName: Input
         node: {fileID: 114733556959690300}
         reroutePoints: []
+      - fieldName: Input
+        node: {fileID: 114885719619435906}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _dynamic: 1
@@ -106,3 +110,78 @@ MonoBehaviour:
   Output:
     PortId: 0
     Name: Output
+--- !u!114 &114885719619435906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2998dc7ebf4686240832bf795ef96102, type: 3}
+  m_Name: Uni Ui Node
+  m_EditorClassIdentifier: 
+  _id: 6
+  _graph: {fileID: 11400000}
+  position: {x: -40, y: -424}
+  ports:
+    keys:
+    - Input
+    - Output
+    - Right
+    - Left
+    values:
+    - _id: 8
+      _fieldName: Input
+      _node: {fileID: 114885719619435906}
+      _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Output
+        node: {fileID: 114791241621273200}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+    - _id: 7
+      _fieldName: Output
+      _node: {fileID: 114885719619435906}
+      _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 1
+    - _id: 9
+      _fieldName: Right
+      _node: {fileID: 114885719619435906}
+      _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 1
+    - _id: 10
+      _fieldName: Left
+      _node: {fileID: 114885719619435906}
+      _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 1
+  _outputs:
+  - PortId: 9
+    Name: Right
+  - PortId: 10
+    Name: Left
+  _routineType: 0
+  Output:
+    PortId: 0
+    Name: Output
+  _validator: {fileID: 0}
+  Input:
+    PortId: 0
+    Name: 
+  UiView: {fileID: 8456630795327732294, guid: 4da2ee50e64c6f442ba2efed9dba64f6, type: 3}

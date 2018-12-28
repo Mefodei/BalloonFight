@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 4533100752661004991}
   - component: {fileID: 3170637075779229470}
   - component: {fileID: 6731092077716269628}
+  - component: {fileID: 5352867515429526933}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,6 +118,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &5352867515429526933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2409480072388701108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a1a7135e541c6e4490d96b70b51fcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 0}
 --- !u!1 &4527084489884480667
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,8 +143,9 @@ GameObject:
   - component: {fileID: 1914789811547981461}
   - component: {fileID: 7729594311079106839}
   - component: {fileID: 3333848090212085791}
+  - component: {fileID: 3149055618672501794}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -234,6 +249,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &3149055618672501794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4527084489884480667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a1a7135e541c6e4490d96b70b51fcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 0}
 --- !u!1 &8113130807330389435
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,6 +274,7 @@ GameObject:
   - component: {fileID: 246579704473827932}
   - component: {fileID: 2192118340768906697}
   - component: {fileID: 6637777796538525497}
+  - component: {fileID: 8456630795327732294}
   m_Layer: 5
   m_Name: TestLevelSceen
   m_TagString: Untagged
@@ -334,3 +363,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8456630795327732294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8113130807330389435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b897eb5a47e56e84e849f0ed02fb75fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggers:
+  - {fileID: 5352867515429526933}
+  - {fileID: 3149055618672501794}
+  _canvas: {fileID: 0}
+  _rectTransform: {fileID: 0}
+  _canvasGroup: {fileID: 0}
