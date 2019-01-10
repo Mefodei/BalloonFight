@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 782945db79ce44748b3f294e0edf364e, type: 3}
   m_Name: TestLevel
   m_EditorClassIdentifier: 
-  _uniqueId: 25
+  _uniqueId: 27
   nodes:
   - {fileID: 114791241621273200}
   - {fileID: 114733556959690300}
@@ -229,7 +229,7 @@ MonoBehaviour:
       _direction: 0
       _connectionType: 0
       _dynamic: 1
-    - _id: 0
+    - _id: 26
       _fieldName: UiInputRight
       _node: {fileID: 114885719619435906}
       _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
@@ -238,7 +238,7 @@ MonoBehaviour:
       _direction: 0
       _connectionType: 0
       _dynamic: 1
-    - _id: 0
+    - _id: 27
       _fieldName: UiInputLeft
       _node: {fileID: 114885719619435906}
       _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
