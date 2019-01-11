@@ -42,8 +42,14 @@ namespace BalloonGame.Character
                 {
                     context.Publish( new MoveLeftCharacterMessage());
                 }},
-                { typeof(MoveRightCharacterMessage), context => { context.Publish( new MoveRightCharacterMessage()); }},
-                { typeof(MoveUpCharacterMessage), context => { context.Publish( new MoveUpCharacterMessage()); }},
+                { typeof(MoveRightCharacterMessage), context =>
+                {
+                    context.Publish( new MoveRightCharacterMessage());
+                }},
+                { typeof(MoveUpCharacterMessage), context =>
+                {
+                    context.Publish( new MoveUpCharacterMessage());
+                }},
 
             };
 
