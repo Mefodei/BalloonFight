@@ -1,6 +1,6 @@
-﻿namespace BalloonGame.Scripts.Messages.CharacterMessages
+﻿namespace BalloonGame.Messages.Character
 {
-    public struct UpCharacterMessage
+    public struct MoveUpCharacterMessage
     {
         
     }
