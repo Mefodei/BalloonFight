@@ -10,9 +10,9 @@ namespace BalloonGame.Character
     {
         
         
-        public override void UpdatePorts()
+        public override void UpdatePortsCache()
         {
-            base.UpdatePorts();
+            base.UpdatePortsCache();
 
             this.UpdatePortValue("MoveLeft");
             this.UpdatePortValue("MoveRight");

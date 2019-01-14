@@ -14,68 +14,66 @@ namespace BalloonGame.Character
     {
         [NonSerialized] private Dictionary<Type, Action<IContext>> _valueActions;
         [NonSerialized] private Dictionary<Type, UniPortValue> _messages;
-        
-        public override void UpdatePorts()
+
+        public override void UpdatePortsCache()
         {
-            
-            base.UpdatePorts();
+            base.UpdatePortsCache();
 
             _messages = new Dictionary<Type, UniPortValue>();
-            
+
             var valuePortTuple = this.UpdatePortValue("MoveLeft", NodePort.IO.Input);
             _messages[typeof(MoveLeftCharacterMessage)] = valuePortTuple.value;
-            
+
             valuePortTuple = this.UpdatePortValue("MoveRight", NodePort.IO.Input);
             _messages[typeof(MoveRightCharacterMessage)] = valuePortTuple.value;
-            
+
             valuePortTuple = this.UpdatePortValue("MoveUp", NodePort.IO.Input);
             _messages[typeof(MoveUpCharacterMessage)] = valuePortTuple.value;
-            
+        }
+
+        public override void UpdatePortsValues()
+        {
+            base.UpdatePortsValues();
+
+            foreach (var context in _context.Contexts)
+            {
+
+                foreach (var value in _messages)
+                {
+                    OnCharacterAction(value.Key,context);
+                }
+
+            }
         }
 
         protected override void OnInitialize(IContextData<IContext> localContext)
         {
             _valueActions = new Dictionary<Type, Action<IContext>>()
             {
-    
-                { typeof(MoveLeftCharacterMessage), context =>
-                {
-                    context.Publish( new MoveLeftCharacterMessage());
-                }},
-                { typeof(MoveRightCharacterMessage), context =>
-                {
-                    context.Publish( new MoveRightCharacterMessage());
-                }},
-                { typeof(MoveUpCharacterMessage), context =>
-                {
-                    context.Publish( new MoveUpCharacterMessage());
-                }},
-
+                {typeof(MoveLeftCharacterMessage), context => { context.Publish(new MoveLeftCharacterMessage()); }},
+                {typeof(MoveRightCharacterMessage), context => { context.Publish(new MoveRightCharacterMessage()); }},
+                {typeof(MoveUpCharacterMessage), context => { context.Publish(new MoveUpCharacterMessage()); }},
             };
-
         }
 
         protected override IEnumerator ExecuteState(IContext context)
         {
             yield return base.ExecuteState(context);
-
-            var lifeTime = GetLifeTime(context);
-            
-            MapAction<MoveLeftCharacterMessage>(context,lifeTime);
-            MapAction<MoveRightCharacterMessage>(context,lifeTime);
-            MapAction<MoveUpCharacterMessage>(context,lifeTime);
-            
         }
 
-        private void MapAction<TValue>(IContext context, ILifeTime lifeTime)
+        private void OnCharacterAction(Type type, IContext context)
         {
-            
-            var type = typeof(TValue);
-            var value = _messages[type];
-            var action = _valueActions[type];
-            var disposable = value.Subscribe<TValue>(context, x => action(context));
-            lifeTime.AddDispose(disposable);
 
+            var portValue = _messages[type];
+                    
+            if (!portValue.HasValue(context, type))
+            {
+                return;
+            }
+
+            var action = _valueActions[type];
+            action.Invoke(context);
+            
         }
     }
 }

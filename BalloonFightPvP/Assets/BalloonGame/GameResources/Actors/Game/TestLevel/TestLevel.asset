@@ -18,8 +18,8 @@ MonoBehaviour:
   - {fileID: 114733556959690300}
   - {fileID: 114982002321953550}
   - {fileID: 114248580696604668}
-  - {fileID: 114850617498113856}
   - {fileID: 114519235675241048}
+  - {fileID: 114850617498113856}
   - {fileID: 0}
 --- !u!114 &114108594890795568
 MonoBehaviour:
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp:Tests.GraphTest:LogNode
   _id: 63
   _graph: {fileID: 11400000}
-  position: {x: 376, y: -104}
+  position: {x: 568, y: -104}
   ports:
     keys:
     - Input
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp:Tests.GraphTest:LogNode
   _id: 60
   _graph: {fileID: 11400000}
-  position: {x: 376, y: -280}
+  position: {x: 568, y: -296}
   ports:
     keys:
     - Input
