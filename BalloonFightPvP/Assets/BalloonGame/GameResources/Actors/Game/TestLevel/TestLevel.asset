@@ -67,7 +67,7 @@ MonoBehaviour:
   _routineType: 0
   _validator: {fileID: 0}
   _message: RightNODE
-  _delay: 1
+  _delay: 0.1
 --- !u!114 &114248580696604668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,7 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 38
   _graph: {fileID: 11400000}
-  position: {x: 520, y: -520}
+  position: {x: 440, y: -632}
   ports:
     keys:
     - Input
@@ -200,7 +200,7 @@ MonoBehaviour:
   _routineType: 0
   _validator: {fileID: 0}
   _message: LeftNODE
-  _delay: 1
+  _delay: 0.1
 --- !u!114 &114733556959690300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 3
   _graph: {fileID: 11400000}
-  position: {x: -136, y: -200}
+  position: {x: 88, y: -232}
   ports:
     keys:
     - Output
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 41
   _graph: {fileID: 11400000}
-  position: {x: 56, y: -472}
+  position: {x: 88, y: -488}
   ports:
     keys:
     - '[in]Left'
@@ -338,11 +338,11 @@ MonoBehaviour:
       _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
-      - fieldName: MoveLeft
-        node: {fileID: 114248580696604668}
-        reroutePoints: []
       - fieldName: Input
         node: {fileID: 114411686879587214}
+        reroutePoints: []
+      - fieldName: MoveLeft
+        node: {fileID: 114248580696604668}
         reroutePoints: []
       _direction: 1
       _connectionType: 0

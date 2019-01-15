@@ -31,21 +31,6 @@ namespace BalloonGame.Character
             _messages[typeof(MoveUpCharacterMessage)] = valuePortTuple.value;
         }
 
-        public override void UpdatePortsValues()
-        {
-            base.UpdatePortsValues();
-
-            foreach (var context in _context.Contexts)
-            {
-
-                foreach (var value in _messages)
-                {
-                    OnCharacterAction(value.Key,context);
-                }
-
-            }
-        }
-
         protected override void OnInitialize(IContextData<IContext> localContext)
         {
             _valueActions = new Dictionary<Type, Action<IContext>>()
@@ -59,6 +44,13 @@ namespace BalloonGame.Character
         protected override IEnumerator ExecuteState(IContext context)
         {
             yield return base.ExecuteState(context);
+            
+            while (IsActive(context))
+            {
+                UpdatePortsValues(context);
+                yield return null;
+            }
+            
         }
 
         private void OnCharacterAction(Type type, IContext context)
@@ -66,7 +58,7 @@ namespace BalloonGame.Character
 
             var portValue = _messages[type];
                     
-            if (!portValue.HasValue(context, type))
+            if (!portValue.HasContext(context))
             {
                 return;
             }
@@ -74,6 +66,15 @@ namespace BalloonGame.Character
             var action = _valueActions[type];
             action.Invoke(context);
             
+        }
+        
+        
+        private void UpdatePortsValues(IContext context)
+        {
+            foreach (var value in _messages)
+            {
+                OnCharacterAction(value.Key,context);
+            }
         }
     }
 }

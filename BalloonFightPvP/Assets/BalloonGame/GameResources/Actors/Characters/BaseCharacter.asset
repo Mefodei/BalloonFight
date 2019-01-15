@@ -17,9 +17,9 @@ MonoBehaviour:
   - {fileID: 114516249383086850}
   - {fileID: 114189859894731892}
   - {fileID: 114087002481687368}
-  - {fileID: 114664498978808470}
   - {fileID: 114745675961240868}
   - {fileID: 114768895470206354}
+  - {fileID: 114664498978808470}
 --- !u!114 &114087002481687368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,10 +81,7 @@ MonoBehaviour:
       _node: {fileID: 114087002481687368}
       _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Input
-        node: {fileID: 114664498978808470}
-        reroutePoints: []
+      connections: []
       _direction: 1
       _connectionType: 0
       _dynamic: 1
@@ -170,7 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 10
   _graph: {fileID: 11400000}
-  position: {x: -392, y: -72}
+  position: {x: -376, y: -152}
   ports:
     keys:
     - Output
@@ -210,12 +207,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 9d06751e48939114d90d326665c4d4d9, type: 3}
   m_Name: Rigidbody Velocity Lerp Node
   m_EditorClassIdentifier: Assembly-CSharp:UniStateMachine.CommonNodes:RigidbodyVelocityLerpNode
   _id: 31
   _graph: {fileID: 11400000}
-  position: {x: 248, y: -408}
+  position: {x: 184, y: -504}
   ports:
     keys:
     - Input
@@ -264,7 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 37
   _graph: {fileID: 11400000}
-  position: {x: 248, y: -184}
+  position: {x: 184, y: -264}
   ports:
     keys:
     - Input
@@ -297,7 +294,7 @@ MonoBehaviour:
   _routineType: 0
   _validator: {fileID: 0}
   _message: ONLEFT
-  _delay: 0
+  _delay: 0.05
 --- !u!114 &114768895470206354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,7 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 40
   _graph: {fileID: 11400000}
-  position: {x: 248, y: -8}
+  position: {x: 184, y: 8}
   ports:
     keys:
     - Input
@@ -345,4 +342,4 @@ MonoBehaviour:
   _routineType: 0
   _validator: {fileID: 0}
   _message: ONRIGHT
-  _delay: 1
+  _delay: 0.05
