@@ -32,7 +32,7 @@ namespace BalloonGame.Nodes
             }    
             yield return base.ExecuteState(context);
         }
-
+        
         public override bool Validate(IContext context)
         {
             return Info && base.Validate(context);
