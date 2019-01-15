@@ -27,6 +27,8 @@ namespace BalloonGame.Nodes
                 actor.SetModel(model);
                 actor.SetEnabled(true);
                 
+                context.LifeTime.AddCleanUpAction(actor.Release);
+                
                 yield return this.WaitForSecond(Delay);
                 
             }    
