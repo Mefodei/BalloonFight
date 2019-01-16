@@ -203,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp:UniStateMachine.CommonNodes:RigidbodyVelocityLerpNode
   _id: 31
   _graph: {fileID: 11400000}
-  position: {x: 120, y: -424}
+  position: {x: 200, y: -520}
   ports:
     keys:
     - Input
@@ -235,10 +235,10 @@ MonoBehaviour:
   - Name: Output
   _routineType: 0
   _validator: {fileID: 0}
-  MaxVelocity: {x: 0, y: 2, z: 0}
+  MaxVelocity: {x: 0, y: 1, z: 0}
   MinVelocity: {x: 0, y: 0, z: 0}
   LerpTime: 5
-  Velocity: {x: 0, y: 0.6097107, z: 0}
+  Velocity: {x: 0, y: 0.09947052, z: 0}
 --- !u!114 &114745675961240868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 37
   _graph: {fileID: 11400000}
-  position: {x: 120, y: -24}
+  position: {x: 200, y: -40}
   ports:
     keys:
     - Input
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 40
   _graph: {fileID: 11400000}
-  position: {x: 120, y: 152}
+  position: {x: 200, y: 184}
   ports:
     keys:
     - Input
