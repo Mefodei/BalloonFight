@@ -16,7 +16,7 @@ namespace BalloonGame.Character
         [NonSerialized] private Dictionary<Type, UniPortValue> _messages;
 
         public override void UpdatePortsCache()
-        {
+        {    
             base.UpdatePortsCache();
 
             _messages = new Dictionary<Type, UniPortValue>();

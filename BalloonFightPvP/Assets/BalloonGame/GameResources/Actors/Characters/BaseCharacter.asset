@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 782945db79ce44748b3f294e0edf364e, type: 3}
   m_Name: BaseCharacter
   m_EditorClassIdentifier: 
-  _uniqueId: 51
+  _uniqueId: 54
   nodes:
   - {fileID: 114516249383086850}
   - {fileID: 114189859894731892}
@@ -20,6 +20,58 @@ MonoBehaviour:
   - {fileID: 114768895470206354}
   - {fileID: 114664498978808470}
   - {fileID: 114579201770099276}
+  - {fileID: 114016997642032842}
+--- !u!114 &114016997642032842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d06751e48939114d90d326665c4d4d9, type: 3}
+  m_Name: Rigidbody Velocity Lerp Node
+  m_EditorClassIdentifier: Assembly-CSharp:UniStateMachine.CommonNodes:RigidbodyVelocityLerpNode
+  _id: 52
+  _graph: {fileID: 11400000}
+  position: {x: 168, y: -232}
+  ports:
+    keys:
+    - Input
+    - Output
+    values:
+    - _id: 53
+      _fieldName: Input
+      _node: {fileID: 114016997642032842}
+      _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: MoveRight
+        node: {fileID: 114579201770099276}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 1
+    - _id: 54
+      _fieldName: Output
+      _node: {fileID: 114016997642032842}
+      _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 1
+  _portValues:
+  - Name: Input
+  - Name: Output
+  _routineType: 0
+  _validator: {fileID: 0}
+  Direction: {x: 1, y: 0, z: 0}
+  MaxVelocity: 1
+  MinVelocity: 0
+  LerpTime: 0.5
+  Velocity: {x: -0.55235386, y: 0, z: 0}
 --- !u!114 &114189859894731892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 10
   _graph: {fileID: 11400000}
-  position: {x: -392, y: -152}
+  position: {x: -376, y: -136}
   ports:
     keys:
     - Output
@@ -168,6 +220,9 @@ MonoBehaviour:
       - fieldName: Input
         node: {fileID: 114768895470206354}
         reroutePoints: []
+      - fieldName: Input
+        node: {fileID: 114016997642032842}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _dynamic: 1
@@ -203,7 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp:UniStateMachine.CommonNodes:RigidbodyVelocityLerpNode
   _id: 31
   _graph: {fileID: 11400000}
-  position: {x: 200, y: -520}
+  position: {x: 184, y: -600}
   ports:
     keys:
     - Input
@@ -235,10 +290,11 @@ MonoBehaviour:
   - Name: Output
   _routineType: 0
   _validator: {fileID: 0}
-  MaxVelocity: {x: 0, y: 1, z: 0}
-  MinVelocity: {x: 0, y: 0, z: 0}
-  LerpTime: 5
-  Velocity: {x: 0, y: 0.09947052, z: 0}
+  Direction: {x: -1, y: 0, z: 0}
+  MaxVelocity: 1
+  MinVelocity: 0
+  LerpTime: 0.5
+  Velocity: {x: -13.10547, y: -0.0059936494, z: 0.0008226462}
 --- !u!114 &114745675961240868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 37
   _graph: {fileID: 11400000}
-  position: {x: 200, y: -40}
+  position: {x: 200, y: 264}
   ports:
     keys:
     - Input
@@ -301,7 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 40
   _graph: {fileID: 11400000}
-  position: {x: 200, y: 184}
+  position: {x: -56, y: 248}
   ports:
     keys:
     - Input

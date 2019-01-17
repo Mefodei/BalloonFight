@@ -71,7 +71,7 @@ namespace BalloonGame.Character
                 .Subscribe(x => OnMessage(context, x));
             timeline.AddDispose(disposable);
 
-            disposable = context.Receive<MoveLeftCharacterMessage>()
+            disposable = context.Receive<MoveRightCharacterMessage>()
                 .Subscribe(x => OnMessage(context, x));
             timeline.AddDispose(disposable);
             
