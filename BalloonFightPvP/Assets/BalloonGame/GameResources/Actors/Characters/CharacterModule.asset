@@ -12,3 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 486426bdb9cc6914385a7e03b98f72f9, type: 3}
   m_Name: CharacterModule
   m_EditorClassIdentifier: 
+  _characterMessages:
+  - MoveLeft
+  - MoveRight
+  - MoveUp
+  - FlyLeft
+  - FlyRight
