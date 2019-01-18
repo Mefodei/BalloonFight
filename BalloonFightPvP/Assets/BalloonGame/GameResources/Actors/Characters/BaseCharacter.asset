@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 782945db79ce44748b3f294e0edf364e, type: 3}
   m_Name: BaseCharacter
   m_EditorClassIdentifier: 
-  _uniqueId: 114
+  _uniqueId: 129
   nodes:
   - {fileID: 114516249383086850}
   - {fileID: 114189859894731892}
@@ -46,10 +46,7 @@ MonoBehaviour:
       _node: {fileID: 114016997642032842}
       _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: MoveRight
-        node: {fileID: 114305513505152138}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 0
       _dynamic: 1
@@ -129,16 +126,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 97
   _graph: {fileID: 11400000}
-  position: {x: -152, y: -440}
+  position: {x: -136, y: -472}
   ports:
     keys:
     - Input
     - Output
-    - MoveLeft
-    - MoveRight
-    - MoveUp
-    - FlyLeft
     - FlyRight
+    - FlyLeft
+    - MoveUp
+    - MoveRight
+    - MoveLeft
+    - '[in]MoveLeft'
+    - '[in]MoveRight'
+    - '[in]MoveUp'
+    - '[in]FlyLeft'
+    - '[in]FlyRight'
     values:
     - _id: 99
       _fieldName: Input
@@ -161,38 +163,8 @@ MonoBehaviour:
       _direction: 1
       _connectionType: 0
       _dynamic: 1
-    - _id: 110
-      _fieldName: MoveLeft
-      _node: {fileID: 114305513505152138}
-      _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Input
-        node: {fileID: 114664498978808470}
-        reroutePoints: []
-      - fieldName: Input
-        node: {fileID: 114745675961240868}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _dynamic: 1
-    - _id: 111
-      _fieldName: MoveRight
-      _node: {fileID: 114305513505152138}
-      _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Input
-        node: {fileID: 114016997642032842}
-        reroutePoints: []
-      - fieldName: Input
-        node: {fileID: 114768895470206354}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _dynamic: 1
-    - _id: 112
-      _fieldName: MoveUp
+    - _id: 120
+      _fieldName: FlyRight
       _node: {fileID: 114305513505152138}
       _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
@@ -200,7 +172,7 @@ MonoBehaviour:
       _direction: 1
       _connectionType: 0
       _dynamic: 1
-    - _id: 113
+    - _id: 121
       _fieldName: FlyLeft
       _node: {fileID: 114305513505152138}
       _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
@@ -209,13 +181,76 @@ MonoBehaviour:
       _direction: 1
       _connectionType: 0
       _dynamic: 1
-    - _id: 114
-      _fieldName: FlyRight
+    - _id: 122
+      _fieldName: MoveUp
       _node: {fileID: 114305513505152138}
       _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections: []
       _direction: 1
+      _connectionType: 0
+      _dynamic: 1
+    - _id: 123
+      _fieldName: MoveRight
+      _node: {fileID: 114305513505152138}
+      _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 1
+    - _id: 124
+      _fieldName: MoveLeft
+      _node: {fileID: 114305513505152138}
+      _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 1
+    - _id: 125
+      _fieldName: '[in]MoveLeft'
+      _node: {fileID: 114305513505152138}
+      _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 1
+    - _id: 126
+      _fieldName: '[in]MoveRight'
+      _node: {fileID: 114305513505152138}
+      _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 1
+    - _id: 127
+      _fieldName: '[in]MoveUp'
+      _node: {fileID: 114305513505152138}
+      _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 1
+    - _id: 128
+      _fieldName: '[in]FlyLeft'
+      _node: {fileID: 114305513505152138}
+      _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 1
+    - _id: 129
+      _fieldName: '[in]FlyRight'
+      _node: {fileID: 114305513505152138}
+      _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
       _connectionType: 0
       _dynamic: 1
   _portValues:
@@ -226,9 +261,19 @@ MonoBehaviour:
   - Name: MoveUp
   - Name: FlyLeft
   - Name: FlyRight
+  - Name: '[in]MoveLeft'
+  - Name: '[in]MoveRight'
+  - Name: '[in]MoveUp'
+  - Name: '[in]FlyLeft'
+  - Name: '[in]FlyRight'
   _routineType: 0
   _adapter: {fileID: 11400000, guid: 8b394f8645b325c45a545eb108f8fc46, type: 2}
   _modulePortValues:
+  - '[in]MoveLeft'
+  - '[in]MoveRight'
+  - '[in]MoveUp'
+  - '[in]FlyLeft'
+  - '[in]FlyRight'
   - MoveLeft
   - MoveRight
   - MoveUp
@@ -293,10 +338,7 @@ MonoBehaviour:
       _node: {fileID: 114664498978808470}
       _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: MoveLeft
-        node: {fileID: 114305513505152138}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 0
       _dynamic: 1
@@ -343,10 +385,7 @@ MonoBehaviour:
       _node: {fileID: 114745675961240868}
       _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: MoveLeft
-        node: {fileID: 114305513505152138}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 0
       _dynamic: 1
@@ -390,10 +429,7 @@ MonoBehaviour:
       _node: {fileID: 114768895470206354}
       _typeQualifiedName: UniStateMachine.Nodes.UniPortValue, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: MoveRight
-        node: {fileID: 114305513505152138}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 0
       _dynamic: 1
