@@ -21,13 +21,13 @@ namespace BalloonGame.Character
 
             _messages = new Dictionary<Type, UniPortValue>();
 
-            var valuePortTuple = this.UpdatePortValue("MoveLeft", NodePort.IO.Input);
+            var valuePortTuple = this.UpdatePortValue("MoveLeft", PortIO.Input);
             _messages[typeof(MoveLeftCharacterMessage)] = valuePortTuple.value;
 
-            valuePortTuple = this.UpdatePortValue("MoveRight", NodePort.IO.Input);
+            valuePortTuple = this.UpdatePortValue("MoveRight", PortIO.Input);
             _messages[typeof(MoveRightCharacterMessage)] = valuePortTuple.value;
 
-            valuePortTuple = this.UpdatePortValue("MoveUp", NodePort.IO.Input);
+            valuePortTuple = this.UpdatePortValue("MoveUp", PortIO.Input);
             _messages[typeof(MoveUpCharacterMessage)] = valuePortTuple.value;
         }
 
