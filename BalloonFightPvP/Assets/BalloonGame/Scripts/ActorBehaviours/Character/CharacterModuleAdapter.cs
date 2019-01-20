@@ -20,6 +20,7 @@ namespace BalloonGame.Modules.Character
     [CreateAssetMenu(menuName = "BalloonGame/Modules/CharacterModule",fileName = "CharacterModule")]
     public class CharacterModuleAdapter : NodeModuleAdapter
     {
+        private ContextData<IContext> _moduleData;
         private Dictionary<string, Type> _portToTypes;
         private Dictionary<Type, Action<IContext>> _inputPortsActions;
         private Dictionary<Type, PortDefinition> _outputMessages;
@@ -27,6 +28,7 @@ namespace BalloonGame.Modules.Character
 
         protected override void OnInitialize()
         {
+            _moduleData = new ContextData<IContext>();
             _portToTypes = new Dictionary<string, Type>();
             _inputMessages = new Dictionary<Type, PortDefinition>();
             
@@ -125,9 +127,10 @@ namespace BalloonGame.Modules.Character
             
             RegisterRuntimeAction(port.Name, (portName, portValue, context) =>
             {
-                if (!portValue.HasValue<TData>(context)) 
+                if (!_moduleData.HasValue<TData>(context)) 
                     return;
-                portValue.RemoveContext(context);
+                
+                _moduleData.RemoveContext(context);
             });
 
         }
@@ -140,7 +143,7 @@ namespace BalloonGame.Modules.Character
             RegisterBindAction(port.Name,
                 (contextData,bindContext) => bindContext.
                         Receive<TData>().
-                        Subscribe(x => contextData.UpdateValue(bindContext,x)));
+                        Subscribe(x => _moduleData.UpdateValue(bindContext,x)));
             
         }
         
