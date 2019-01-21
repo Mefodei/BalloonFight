@@ -22,12 +22,13 @@ namespace BalloonGame.Modules.Character
     {
         private ContextData<IContext> _moduleData;
         private Dictionary<string, Type> _portToTypes;
-        private Dictionary<Type, Action<IContext>> _inputPortsActions;
+        private Dictionary<PortDefinition, PortDefinition> _portPairs;
         private Dictionary<Type, PortDefinition> _outputMessages;
         private Dictionary<Type, PortDefinition> _inputMessages;
 
         protected override void OnInitialize()
         {
+            _portPairs = new Dictionary<PortDefinition, PortDefinition>();
             _moduleData = new ContextData<IContext>();
             _portToTypes = new Dictionary<string, Type>();
             _inputMessages = new Dictionary<Type, PortDefinition>();
@@ -60,14 +61,6 @@ namespace BalloonGame.Modules.Character
                 }},
             };
             
-            _inputPortsActions = new Dictionary<Type, Action<IContext>>(){
-                {typeof(MoveLeftCharacterMessage), context => { context.Publish(new MoveLeftCharacterMessage()); }},
-                {typeof(MoveRightCharacterMessage), context => { context.Publish(new MoveRightCharacterMessage()); }},
-                {typeof(MoveUpCharacterMessage), context => { context.Publish(new MoveUpCharacterMessage()); }},
-                {typeof(FlyLeftCharacterMessage), context => { context.Publish(new FlyLeftCharacterMessage()); }},
-                {typeof(FlyRightCharacterMessage), context => { context.Publish(new FlyRightCharacterMessage()); }},
-            };
-            
             foreach (var message in _outputMessages)
             {
                 
@@ -81,33 +74,26 @@ namespace BalloonGame.Modules.Character
                 _inputMessages[message.Key] = definition;
                 _portToTypes[port.Name] = message.Key;
                 _portToTypes[definition.Name] = message.Key;
-
-                RegisterRuntimeAction(intputName,OnInputPortExecution);
+                _portPairs[definition] = port;
             }
 
+            BindInputUpdate<MoveLeftCharacterMessage>();
+            BindInputUpdate<MoveRightCharacterMessage>();
+            BindInputUpdate<MoveUpCharacterMessage>();
+            BindInputUpdate<FlyLeftCharacterMessage>();
+            BindInputUpdate<FlyRightCharacterMessage>();
+            
             OnBindOutput<MoveLeftCharacterMessage>();
             OnBindOutput<MoveRightCharacterMessage>();
             OnBindOutput<MoveUpCharacterMessage>();
             OnBindOutput<FlyLeftCharacterMessage>();
             OnBindOutput<FlyRightCharacterMessage>();
 
-            UpdateOutputValue<MoveLeftCharacterMessage>();
-            UpdateOutputValue<MoveRightCharacterMessage>();
-            UpdateOutputValue<MoveUpCharacterMessage>();
-            UpdateOutputValue<FlyLeftCharacterMessage>();
-            UpdateOutputValue<FlyRightCharacterMessage>();
-        }
-
-        private void OnInputPortExecution(string portName,IContextData<IContext> port, IContext context)
-        {
-            
-            if (!port.HasContext(context))
-                return;
-
-            var type = _portToTypes[portName];
-            var action = _inputPortsActions[type];
-            action(context);
-
+            BindOutputUpdate<MoveLeftCharacterMessage>();
+            BindOutputUpdate<MoveRightCharacterMessage>();
+            BindOutputUpdate<MoveUpCharacterMessage>();
+            BindOutputUpdate<FlyLeftCharacterMessage>();
+            BindOutputUpdate<FlyRightCharacterMessage>();
         }
 
         protected override List<PortDefinition> GetPorts()
@@ -120,17 +106,39 @@ namespace BalloonGame.Modules.Character
             return items;
         }
 
-        private void UpdateOutputValue<TData>()
+        private void BindInputUpdate<TData>() where TData : new()
+        {
+            var type = typeof(TData);
+            var port = _inputMessages[type];
+            
+            RegisterRuntimeAction(port.Name, (portName, portValue, context) =>
+            {
+                if (!portValue.HasContext(context))
+                    return;
+                var data = new TData();
+                context.Publish(data);
+            });
+        }
+
+        private void BindOutputUpdate<TData>()
         {
             var type = typeof(TData);
             var port = _outputMessages[type];
             
             RegisterRuntimeAction(port.Name, (portName, portValue, context) =>
             {
-                if (!_moduleData.HasValue<TData>(context)) 
-                    return;
                 
-                _moduleData.RemoveContext(context);
+                var valueUpdated = _moduleData.HasValue<TData>(context);
+                if (valueUpdated)
+                {
+                    var value = _moduleData.Get<TData>(context);
+                    portValue.UpdateValue(context,value);
+                }
+                else
+                {
+                    portValue.RemoveContext(context);
+                }
+                _moduleData.Remove<TData>(context);
             });
 
         }

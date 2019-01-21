@@ -70,7 +70,7 @@ MonoBehaviour:
   MaxVelocity: 1
   MinVelocity: 0
   LerpTime: 0.1
-  Velocity: {x: 37.513832, y: -103.25337, z: 0.03559637}
+  Velocity: {x: 5.224795, y: -0.0063138306, z: 0.0048974585}
 --- !u!114 &114189859894731892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,8 +376,8 @@ MonoBehaviour:
   Direction: {x: -0.1, y: 0, z: 0}
   MaxVelocity: 1
   MinVelocity: 0
-  LerpTime: 0.5
-  Velocity: {x: -27.311947, y: -90.99648, z: 0.05416957}
+  LerpTime: 0.1
+  Velocity: {x: 0.00021084398, y: -0.00501287, z: -0.00012742169}
 --- !u!114 &114745675961240868
 MonoBehaviour:
   m_ObjectHideFlags: 0
