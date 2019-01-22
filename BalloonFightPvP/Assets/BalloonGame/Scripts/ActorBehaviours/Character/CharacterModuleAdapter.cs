@@ -138,7 +138,8 @@ namespace BalloonGame.Modules.Character
                 {
                     portValue.RemoveContext(context);
                 }
-                _moduleData.Remove<TData>(context);
+                _moduleData.RemoveContext(context);
+                
             });
 
         }
@@ -149,9 +150,10 @@ namespace BalloonGame.Modules.Character
             var port = _outputMessages[type];
             
             RegisterBindAction(port.Name,
-                (contextData,bindContext) => bindContext.
-                        Receive<TData>().
-                        Subscribe(x => _moduleData.UpdateValue(bindContext,x)));
+                (contextData,bindContext) => 
+                    bindContext.Receive<TData>().
+                        Subscribe(x => 
+                            _moduleData.UpdateValue(bindContext,x)));
             
         }
         
