@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e69df77ca7c98f4aa9437d461f8ec2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rigidbody: {fileID: 0}
-  BalloonPoint: {fileID: 0}
+  Rigidbody: {fileID: 758333830964591576}
+  BalloonPoint: {fileID: 758333830964591576}
   WeaponPoint: {fileID: 4953649793516534681}
 --- !u!1 &182762914619377860
 GameObject:
@@ -248,7 +248,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 64
+  m_Constraints: 72
   m_CollisionDetection: 0
 --- !u!1001 &2588974496781365721
 PrefabInstance:
@@ -257,11 +257,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 182762916502055748}
     m_Modifications:
-    - target: {fileID: 806686816415439021, guid: 6d385f84c6956fb46969e0cb715ae4b1,
-        type: 3}
-      propertyPath: m_Name
-      value: Sphere (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 806686816415439020, guid: 6d385f84c6956fb46969e0cb715ae4b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -317,6 +312,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 806686816415439021, guid: 6d385f84c6956fb46969e0cb715ae4b1,
+        type: 3}
+      propertyPath: m_Name
+      value: Sphere (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 806686816415439030, guid: 6d385f84c6956fb46969e0cb715ae4b1,
         type: 3}
       propertyPath: m_ConnectedBody
@@ -337,11 +337,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 182762916502055748}
     m_Modifications:
-    - target: {fileID: 806686816415439021, guid: 6d385f84c6956fb46969e0cb715ae4b1,
-        type: 3}
-      propertyPath: m_Name
-      value: Sphere
-      objectReference: {fileID: 0}
     - target: {fileID: 806686816415439020, guid: 6d385f84c6956fb46969e0cb715ae4b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -396,6 +391,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 806686816415439021, guid: 6d385f84c6956fb46969e0cb715ae4b1,
+        type: 3}
+      propertyPath: m_Name
+      value: Sphere
       objectReference: {fileID: 0}
     - target: {fileID: 806686816415439030, guid: 6d385f84c6956fb46969e0cb715ae4b1,
         type: 3}

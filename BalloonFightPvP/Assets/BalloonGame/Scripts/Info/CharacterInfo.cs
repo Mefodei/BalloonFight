@@ -12,14 +12,14 @@ namespace BalloonGame.Scripts.Info
         
         public CharacterView CharacterView;
         
-        public override ActorModel Create()
+        protected override ActorModel CreateModel()
         {
             var model = ClassPool.Spawn<CharacterModel>();
             
             model.Id = ++_id;
             model.Info = this;
             model.View = ObjectPool.Spawn(CharacterView, Vector3.zero, Quaternion.identity);
-            
+
             return model;
         }
     }

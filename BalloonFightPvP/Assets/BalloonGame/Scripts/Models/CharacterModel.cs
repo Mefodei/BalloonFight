@@ -18,6 +18,8 @@ namespace BalloonGame.Scripts.Models
         public override void RegisterContext(IContext context)
         {
             context.Add(View);
+            context.Add(View.Rigidbody);
+            
             context.Add(Info);
             context.Add(this);
 
