@@ -71,7 +71,7 @@ MonoBehaviour:
   _routineType: 0
   ForceData:
     ForceMode: 0
-    Direction: {x: 0, y: 0, z: 0}
+    Direction: {x: 1, y: 0, z: 0}
     MaxForce: 100
     MinForce: 0
     LerpTime: 0.2
@@ -226,8 +226,8 @@ MonoBehaviour:
   _routineType: 0
   ForceData:
     ForceMode: 0
-    Direction: {x: 0, y: 0, z: 0}
-    MaxForce: 1000
+    Direction: {x: -1, y: 1, z: 0}
+    MaxForce: 100
     MinForce: 0
     LerpTime: 0
 --- !u!114 &114189859894731892
@@ -803,7 +803,7 @@ MonoBehaviour:
   _routineType: 0
   ForceData:
     ForceMode: 0
-    Direction: {x: 0, y: 0, z: 0}
+    Direction: {x: 1, y: 1, z: 0}
     MaxForce: 100
     MinForce: 0
     LerpTime: 0
@@ -851,7 +851,7 @@ MonoBehaviour:
   _routineType: 0
   ForceData:
     ForceMode: 0
-    Direction: {x: 0, y: 0, z: 0}
+    Direction: {x: -1, y: 0, z: 0}
     MaxForce: 100
     MinForce: 0
     LerpTime: 0.2
