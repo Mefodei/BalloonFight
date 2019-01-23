@@ -138,7 +138,8 @@ namespace BalloonGame.Modules.Character
                 {
                     portValue.RemoveContext(context);
                 }
-                _moduleData.RemoveContext(context);
+                
+                _moduleData.Remove<TData>(context);
                 
             });
 
